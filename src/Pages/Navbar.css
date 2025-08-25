@@ -1,0 +1,43 @@
+/* Navbar styling */
+.nav-logo {
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(90deg, #0088ff, #6600ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+/* Animated underline effect */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #0088ff, #6600ff);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Glowing effect for active links */
+.active-link {
+  text-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+}

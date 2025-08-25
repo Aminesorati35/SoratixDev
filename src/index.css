@@ -1,0 +1,21 @@
+@import "tailwindcss";
+html,body{
+   overflow-x: hidden;
+}
+body{
+  background-color: #0a1525;
+  color: #ffffff;
+}
+
+:root {
+  --primary-color: #0088ff;
+  --primary-dark: #0066cc;
+  --primary-light: #66b3ff;
+  --secondary-color: #6600ff;
+  --accent-color: #00ccff;
+  --dark-bg: #0a1525;
+  --darker-bg: #050d1a;
+  --light-bg: #0f1d30;
+  --text-color: #ffffff;
+  --text-light: #e0e0e0;
+}

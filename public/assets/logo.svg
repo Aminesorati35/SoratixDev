@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <circle cx="250" cy="250" r="240" fill="none" stroke="#0088ff" stroke-width="10"/>
+  <path d="M250 100 Q 350 150 350 250 Q 350 350 250 400 Q 150 350 150 250 Q 150 150 250 100" fill="url(#gradient)" />
+  <text x="310" y="350" font-family="Arial" font-size="40" fill="#0088ff">011</text>
+  <text x="310" y="390" font-family="Arial" font-size="40" fill="#0088ff">11</text>
+  <text x="150" y="300" font-family="Arial" font-size="60" fill="#0088ff">{</text>
+  <text x="190" y="300" font-family="Arial" font-size="60" fill="#0088ff">}</text>
+  <circle cx="350" cy="320" r="10" fill="#0088ff" />
+  <line x1="350" y1="320" x2="390" y2="320" stroke="#0088ff" stroke-width="8" />
+  <circle cx="390" cy="320" r="10" fill="#0088ff" />
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0088ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6600ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
