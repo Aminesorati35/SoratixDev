@@ -1,5 +1,107 @@
 export const projects = [
-    {id:1,nom:'Best Service Tours',technology:'Laravel',src:'https://github.com/Aminesorati35/BestServiceTours'},
-    {id:2,nom:'Rent Car',technology:'LR',src:'https://github.com/Aminesorati35/RentCar'},
-
-]
+  {
+    id: 1,
+    title: "Ultra Build Ecommerce Website",
+    description:
+      "An e-commerce website for PC components, peripherals, and custom-built computers.",
+    images: [
+      `/assets/projects/ultrabuild/1.png`,
+      `/assets/projects/ultrabuild/2.png`,
+      `/assets/projects/ultrabuild/3.png`,
+      `/assets/projects/ultrabuild/4.png`,
+      `/assets/projects/ultrabuild/5.png`,
+      `/assets/projects/ultrabuild/6.png`,
+      `/assets/projects/ultrabuild/7.png`,
+      `/assets/projects/ultrabuild/8.png`,
+      `/assets/projects/ultrabuild/9.png`,
+      `/assets/projects/ultrabuild/10.png`,
+    ],
+    tags: ["React","Laravel", "MySQL", "Framer Motion","Tatilwind"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    id: 2,
+    title: "Tourist Car Reservation",
+    description:
+      "A tourist car reservation application with multilingual support",
+    images: [
+      "/assets/projects/bestservicetours/1.PNG",
+      "/assets/projects/bestservicetours/2.PNG",
+      "/assets/projects/bestservicetours/3.PNG",
+      "/assets/projects/bestservicetours/4.PNG",
+      "/assets/projects/bestservicetours/5.PNG",
+      "/assets/projects/bestservicetours/6.PNG",
+      "/assets/projects/bestservicetours/7.PNG",
+    ],
+    tags: ["Laravel", "MySQL", "JavaScript"],
+    github: "https://github.com/Aminesorati35/BestServiceTours.git",
+    demo: "https://bestservicetours.infinityfreeapp.com/",
+  },
+  {
+    id: 3,
+    title: "Car Rental Booking Platform",
+    description:
+      "A car rental application with booking and multilingual support",
+    images: [
+      "/assets/projects/rentcar/1.PNG",
+      "/assets/projects/rentcar/2.PNG",
+      "/assets/projects/rentcar/3.PNG",
+      "/assets/projects/rentcar/4.PNG",
+      "/assets/projects/rentcar/5.PNG",
+      "/assets/projects/rentcar/6.PNG",
+      "/assets/projects/rentcar/7.PNG",
+    ],
+    tags: ["React", "Laravel", "MySQL"],
+    github: "https://github.com/Aminesorati35/RentCar.git",
+    demo: "#",
+  },
+  {
+    id: 4,
+    title: "Restaurant Reservation Platform",
+    description:
+      "A restaurant reservation website with booking and management features.",
+    images: [
+      "/assets/projects/jana/1.PNG",
+      "/assets/projects/jana/2.PNG",
+      "/assets/projects/jana/3.PNG",
+      "/assets/projects/jana/4.PNG",
+      "/assets/projects/jana/5.PNG",
+      "/assets/projects/jana/6.PNG",
+      "/assets/projects/jana/7.PNG",
+      "/assets/projects/jana/8.PNG",
+    ],
+    tags: ["React", "Laravel", "MySQL", "Framer Motion", "Tailwind"],
+    github: "https://github.com/Aminesorati35/JANA_MARRAKECH.git",
+    demo: "https://janarestaurant.netlify.app/",
+  },
+  {
+    id: 5,
+    title: "Order Management App",
+    description: "An order management application with CRUD operations",
+    images: ["/assets/projects/gestioncommande/1.PNG"], 
+    tags: ["Laravel", "MySQL"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    id: 6,
+    title: "Search Film App",
+    description: "A movie search application using a public film API",
+    images: [
+      "/assets/projects/searchfilm/1.PNG",      
+    ], 
+    tags: ["React", "API"],
+    github: "https://github.com/Aminesorati35/Search_Film_App_With_React.git",
+    demo: "#",
+  },
+  /*{
+  id: 6,
+  title: 'Order Management App',
+  description: 'An order management application with CRUD operations',
+  image: '/assets/projects/GC.PNG', 
+  tags: ['React', 'Laravel', 'MySQL'],
+  github: 'https://github.com/Aminesorati35/Order-Management',
+  demo: '#'
+},*/
+];
