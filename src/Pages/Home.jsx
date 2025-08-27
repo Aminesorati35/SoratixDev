@@ -13,7 +13,7 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const Home = ({ handleClick }) => {
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-30 mt-30 px-5 md:px-0 p-5 bg-pattern">
+    <div className="flex flex-col xl:flex-row justify-center items-center gap-10 md:gap-30 mt-30 px-5 md:px-0 p-5 bg-pattern">
       <section className="flex justify-center flex-col text-white p-5 md:p-15 mt-20 md:w-1/2 md:ml-0 ml-5  ">
         <motion.div
           className=""
@@ -67,7 +67,7 @@ const Home = ({ handleClick }) => {
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, type: "spring", stiffness: 200, delay: 0.6 }}
-          className="w-80 md:w-190 font-semibold text-xl md:text-2xl mt-5"
+          className="w-80 md:w-170 2xl:w-190 font-semibold text-xl md:text-2xl mt-5"
         >
           I'm passionate about building clean, modern applications with React,
           PHP, and Laravel. I transform ideas into powerful digital solutions
