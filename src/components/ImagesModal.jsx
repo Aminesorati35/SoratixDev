@@ -7,60 +7,14 @@ const ImagesModal = ({images,isOpen,onClose}) => {
     const [currentIndex, setCurrentIndex] = useState(0)
   const [isFullSize, setIsFullSize] = useState(false)
   const [imageKey, setImageKey] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
-  const [imageError, setImageError] = useState(false)
   
   useEffect(() => {
     if (isOpen && images.length > 0) {
       setCurrentIndex(0)
       setIsFullSize(false)
       setImageKey(0)
-      setIsLoading(true)
-      setImageError(false)
     }
   }, [isOpen, images])
-
-  // Reset loading state when image index changes
-  useEffect(() => {
-    setIsLoading(true)
-    setImageError(false)
-    
-    // Add timeout fallback to prevent infinite loading
-    const timeoutId = setTimeout(() => {
-      if (isLoading) {
-        setIsLoading(false)
-      }
-    }, 10000) // 10 second timeout
-    
-    return () => clearTimeout(timeoutId)
-  }, [currentIndex, isLoading])
-
-  const handleImageLoad = () => {
-    setIsLoading(false)
-    setImageError(false)
-  }
-
-  const handleImageError = () => {
-    setIsLoading(false)
-    setImageError(true)
-  }
-
-  // Preload current image to ensure it's ready
-  useEffect(() => {
-    if (images[currentIndex]) {
-      const img = new Image()
-      img.onload = () => {
-        setIsLoading(false)
-        setImageError(false)
-      }
-      img.onerror = () => {
-        setIsLoading(false)
-        setImageError(true)
-      }
-      img.src = images[currentIndex]
-    }
-  }, [currentIndex, images])
-  
   const changeImg = (type) => {
     if (type === "next") {
       if (currentIndex === images.length - 1) {
@@ -77,13 +31,11 @@ const ImagesModal = ({images,isOpen,onClose}) => {
     }
     setImageKey(prev => prev + 1) 
   }
-  
   const changeImgByCircle = (index) => {
     setCurrentIndex(index)
     setImageKey(prev => prev + 1) // Force re-animation
   }
     if (!isOpen || images.length === 0) return null
-
   return (
     <div>
       <motion.div 
@@ -146,89 +98,20 @@ const ImagesModal = ({images,isOpen,onClose}) => {
 
             {/* Image Container */}
             <div className={`relative w-full h-[70vh] ${isFullSize ? 'overflow-auto' : 'overflow-hidden'} flex ${isFullSize ? 'items-start justify-start' : 'items-center justify-center'}`}>
-              
-              {/* Loading Spinner */}
-              {isLoading && (
-                <motion.div 
-                  className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#0a1525] via-[#0f1d35] to-[#152a45] z-10"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="relative">
-                      {/* Outer spinning ring */}
-                      <motion.div
-                        className="w-16 h-16 border-4 border-[#0088ff]/20 border-t-[#0088ff] rounded-full"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                      />
-                      {/* Inner pulsing dot */}
-                      <motion.div
-                        className="absolute top-1/2 left-1/2 w-2 h-2 bg-[#0088ff] rounded-full transform -translate-x-1/2 -translate-y-1/2"
-                        animate={{ scale: [1, 1.5, 1] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      />
-                    </div>
-                    <motion.p 
-                      className="text-white/70 text-sm font-medium"
-                      animate={{ opacity: [0.5, 1, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      Loading high-quality image...
-                    </motion.p>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Error State */}
-              {imageError && (
-                <motion.div 
-                  className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#0a1525] via-[#0f1d35] to-[#152a45] z-10"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <div className="flex flex-col items-center gap-4 text-center">
-                    <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center">
-                      <span className="text-red-400 text-2xl">⚠</span>
-                    </div>
-                    <div>
-                      <p className="text-white/70 text-sm font-medium mb-2">Failed to load image</p>
-                      <button 
-                        onClick={() => {
-                          setImageError(false)
-                          setIsLoading(true)
-                          // Force image reload by updating the key
-                          setImageKey(prev => prev + 1)
-                        }}
-                        className="px-4 py-2 text-xs bg-[#0088ff]/20 text-[#0088ff] rounded-lg hover:bg-[#0088ff]/30 transition-colors border border-[#0088ff]/30"
-                      >
-                        Try Again
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
               <motion.img 
                 key={`${currentIndex}-${imageKey}`}
                 src={images[currentIndex]} 
                 alt="" 
-                className={`rounded-lg cursor-pointer transition-opacity duration-300 ${
-                  isLoading ? 'opacity-0' : 'opacity-100'
-                } ${
+                className={`rounded-lg cursor-pointer ${
                   isFullSize 
                     ? 'min-w-0 min-h-0 max-w-none' 
                     : 'max-w-full max-h-full object-contain'
                 }`}
                 onClick={() => setIsFullSize(!isFullSize)}
-                onLoad={handleImageLoad}
-                onError={handleImageError}
                 title={isFullSize ? 'Click to fit to container' : 'Click to view full size'}
                 initial={{ opacity: 0, scale: 0.9, x: 100 }}
                 animate={{ 
-                  opacity: isLoading ? 0 : 1, 
+                  opacity: 1, 
                   scale: isFullSize ? 1 : 1,
                   x: 0
                 }}
@@ -243,7 +126,7 @@ const ImagesModal = ({images,isOpen,onClose}) => {
               />
               
               {/* Navigation Arrows */}
-              {images.length > 1 && !isLoading && !imageError && (
+              {images.length > 1 && (
                 <>
                   <motion.button 
                     onClick={() => changeImg('prev')} 
