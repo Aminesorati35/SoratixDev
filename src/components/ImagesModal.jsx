@@ -110,6 +110,7 @@ const ImagesModal = ({images,isOpen,onClose}) => {
                 onClick={() => setIsFullSize(!isFullSize)}
                 title={isFullSize ? 'Click to fit to container' : 'Click to view full size'}
                 initial={{ opacity: 0, scale: 0.9, x: 100 }}
+                loading='lazy'
                 animate={{ 
                   opacity: 1, 
                   scale: isFullSize ? 1 : 1,
