@@ -189,7 +189,7 @@ const Home = ({ handleClick }) => {
           />
 
           <img
-            src="/assets/me5.png"
+            src="/assets/me6.png"
             className="w-full h-full object-cover"
             alt="Amine Sekhal"
           />
