@@ -190,6 +190,7 @@ const Home = ({ handleClick }) => {
 
           <img
             src="/assets/me6.png"
+            loading="lazy"
             className="w-full h-full object-cover"
             alt="Amine Sekhal"
           />
