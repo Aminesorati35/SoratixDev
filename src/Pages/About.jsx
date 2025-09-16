@@ -41,7 +41,7 @@ const About = () => {
         <br />I primarily use the following technologies, tools and libraries,
         but always open to pick up more:
       </p>
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-[60%] gap-5 mt-10" data-aos="fade-up">
+      <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 w-[60%] gap-5 mt-10" data-aos="fade-up">
         {skills.map((skill, index) => (
           <motion.div 
             key={index} 
@@ -53,13 +53,17 @@ const About = () => {
 
           >
             <div className="flex justify-center items-center h-30 w-full">
-              {skill.icon && (
+              {skill.nom==="Next Js" ?
+               <img src={skill.src} alt="" width="80px" />
+               :
+               skill.icon && (
                 <FontAwesomeIcon 
                   icon={skill.icon} 
-                  className="text-6xl" 
+                  className="text-7xl" 
                   style={skill.color ? {color: `#${skill.color}`} : {color: 'white'}} 
                 />
-              )}
+              )
+              }
             </div>
             <div className="bg-[#0a1525] w-full p-3 text-center">
               <h3 className="text-[#0088ff] font-bold">{skill.nom} </h3>

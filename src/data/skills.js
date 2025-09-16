@@ -3,6 +3,7 @@ import { faGit, faGitAlt, faJs, faLaravel, faNode, faNodeJs, faPhp, faPython, fa
 import { faDatabase } from "@fortawesome/free-solid-svg-icons"
 export const skills = [
     {id:1,nom:"React",description:"React JS",src:'/assets/skills/react.js.png',icon:faReact,color:'08D9FF',width:'240px'},
+    {id:10,nom:"Next Js",description:"Next Js",src:'/assets/skills/nextjs.svg',color:'08D9FF',width:'240px'},
     {id:2,nom:"Laravel",description:"Laravel Php",src:'/assets/skills/Laravel.png',icon:faLaravel,color:'FF3428',width:'160px'},
     {id:3,nom:"Tailwind",description:"Tailwind css",src:'/assets/skills/Tailwind.png',icon:faReact,width:'200px',color:'08D9FF'},
     {id:4,nom:"Python",description:"Python",src:'/assets/skills/Python.png',icon:faPython,color:'FFD342'},
